@@ -4,11 +4,11 @@
     "slug": "my-pets",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/logoPets.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/logoPets.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#ffa500"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -21,12 +21,17 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "foregroundImage": "./assets/logoPets.png",
+        "backgroundColor": "#ffa500"
+      },
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyDH6elRSI2vZuGfiI6bu2_6FXNoBbKEX7Y"
+        }
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/logoPets.png"
     }
   }
 }
