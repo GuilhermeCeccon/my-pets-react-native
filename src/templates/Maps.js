@@ -7,167 +7,6 @@ import { useSelector } from 'react-redux'
 
 export default function Maps() {
 
-    const estiloPersonalizadoMapa = [
-        {
-            "elementType": "geometry",
-            "stylers": [
-                {
-                    "color": "#242f3e"
-                }
-            ]
-        },
-        {
-            "elementType": "labels.text.fill",
-            "stylers": [
-                {
-                    "color": "#746855"
-                }
-            ]
-        },
-        {
-            "elementType": "labels.text.stroke",
-            "stylers": [
-                {
-                    "color": "#242f3e"
-                }
-            ]
-        },
-        {
-            "featureType": "administrative.locality",
-            "elementType": "labels.text.fill",
-            "stylers": [
-                {
-                    "color": "#d59563"
-                }
-            ]
-        },
-        {
-            "featureType": "poi",
-            "elementType": "labels.text.fill",
-            "stylers": [
-                {
-                    "color": "#d59563"
-                }
-            ]
-        },
-        {
-            "featureType": "poi.park",
-            "elementType": "geometry",
-            "stylers": [
-                {
-                    "color": "#263c3f"
-                }
-            ]
-        },
-        {
-            "featureType": "poi.park",
-            "elementType": "labels.text.fill",
-            "stylers": [
-                {
-                    "color": "#6b9a76"
-                }
-            ]
-        },
-        {
-            "featureType": "road",
-            "elementType": "geometry",
-            "stylers": [
-                {
-                    "color": "#38414e"
-                }
-            ]
-        },
-        {
-            "featureType": "road",
-            "elementType": "geometry.stroke",
-            "stylers": [
-                {
-                    "color": "#212a37"
-                }
-            ]
-        },
-        {
-            "featureType": "road",
-            "elementType": "labels.text.fill",
-            "stylers": [
-                {
-                    "color": "#9ca5b3"
-                }
-            ]
-        },
-        {
-            "featureType": "road.highway",
-            "elementType": "geometry",
-            "stylers": [
-                {
-                    "color": "#746855"
-                }
-            ]
-        },
-        {
-            "featureType": "road.highway",
-            "elementType": "geometry.stroke",
-            "stylers": [
-                {
-                    "color": "#1f2835"
-                }
-            ]
-        },
-        {
-            "featureType": "road.highway",
-            "elementType": "labels.text.fill",
-            "stylers": [
-                {
-                    "color": "#f3d19c"
-                }
-            ]
-        },
-        {
-            "featureType": "transit",
-            "elementType": "geometry",
-            "stylers": [
-                {
-                    "color": "#2f3948"
-                }
-            ]
-        },
-        {
-            "featureType": "transit.station",
-            "elementType": "labels.text.fill",
-            "stylers": [
-                {
-                    "color": "#d59563"
-                }
-            ]
-        },
-        {
-            "featureType": "water",
-            "elementType": "geometry",
-            "stylers": [
-                {
-                    "color": "#17263c"
-                }
-            ]
-        },
-        {
-            "featureType": "water",
-            "elementType": "labels.text.fill",
-            "stylers": [
-                {
-                    "color": "#515c6d"
-                }
-            ]
-        },
-        {
-            "featureType": "water",
-            "elementType": "labels.text.stroke",
-            "stylers": [
-                {
-                    "color": "#17263c"
-                }
-            ]
-        }
-    ]
     const myPets = useSelector(store => store.petsReducer) // array []
     const [myPosition, setMyPosition] = useState(null)
     const [pontoInicial, setPontoInicial] = useState({
@@ -176,7 +15,6 @@ export default function Maps() {
         latitudeDelta: 0.015,
         longitudeDelta: 0.015
     })
-
 
     useLayoutEffect(() => {
         getMyPosition()
@@ -197,7 +35,6 @@ export default function Maps() {
                 Alert.alert("Erro ao acessar as coordenadas do GPS!")
             }
         }
-
     }
 
     return (
@@ -205,9 +42,8 @@ export default function Maps() {
             <MapView
                 style={styles.mapStyle}
                 region={pontoInicial}
-                // customMapStyle={estiloPersonalizadoMapa}
+                initialRegion={pontoInicial}
             >
-                
                 {myPets.map(item =>
                     <Marker
                         key={item.id}
@@ -222,7 +58,6 @@ export default function Maps() {
                         <Image
                             /* source={require('../../assets/iconPerson.png')} */
                             style={{ width: 35, height: 35 }}
-
                         />
                     </Marker>)}
                         {myPosition ?
@@ -248,7 +83,7 @@ export default function Maps() {
 const styles = StyleSheet.create({
     mapStyle: {
         width: Dimensions.get('window').width,
-        height: Dimensions.get('window').height,
+        height: '100%',
         borderRadius: 10,
     }
 

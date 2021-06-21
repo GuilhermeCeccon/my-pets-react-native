@@ -4,7 +4,7 @@
     "slug": "my-pets",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/logoPets.png",
+    "icon": "./assets/logoPetsQuadrada.png",
     "splash": {
       "image": "./assets/logoPets.png",
       "resizeMode": "contain",
@@ -21,9 +21,10 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/logoPets.png",
+        "foregroundImage": "./assets/logoPetsQuadrada.png",
         "backgroundColor": "#ffa500"
       },
+      "package": "MyPets.com.Ceccon",
       "config": {
         "googleMaps": {
           "apiKey": "AIzaSyDH6elRSI2vZuGfiI6bu2_6FXNoBbKEX7Y"
@@ -31,7 +32,7 @@
       }
     },
     "web": {
-      "favicon": "./assets/logoPets.png"
+      "favicon": "./assets/logoPetsQuadrada.png"
     }
   }
 }

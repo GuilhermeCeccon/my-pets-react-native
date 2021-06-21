@@ -9,7 +9,7 @@ export default function Sobre() {
             <Text style={styles.text}>my-pets</Text>
             <View style={styles.container}>
                 <Text style={styles.title}>Desenvolvido por:</Text>
-                <Text style={styles.text}>Guiherme Ceccon da Luz</Text>
+                <Text style={styles.text}>Guilherme Ceccon da Luz</Text>
                 <Text style={styles.text}>RA 1116633</Text> 
             </View>
         </View>

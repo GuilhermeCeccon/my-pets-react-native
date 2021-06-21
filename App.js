@@ -15,6 +15,7 @@ import Technology from './src/templates/Technology'
 import "./src/services/ConnectFirebase"
 import { Provider as StoreProvider } from 'react-redux'
 import store from './src/services/store'
+/* import MapView from 'react-native-maps'; */
 
 export default function App() {
 
